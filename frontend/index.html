@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas</title>
+    <script type="text/javascript" src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Gerador de Senhas</h1>
+      <div class="form-group">
+        <label for="ordemServico">Ordem de Serviço:</label>
+        <input type="text" id="ordemServico">
+      </div>
+      <button onclick="gerarSenhasDeterministicas()">Gerar Senhas</button>
+      <!-- <button onclick="buscarSenhas()">Buscar Senhas</button> -->
+      <div class="result">
+        <p id="senha4Digitos">Senha de 4 dígitos:</p>
+        <p id="senha6Digitos">Senha de 6 dígitos:</p>
+      </div>
+    </div>
+
+  </body>
+
+</html>

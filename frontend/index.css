@@ -1,0 +1,125 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f8ff; /* Um azul bem claro */
+    color: #333;
+    margin: 0;
+    padding: 20px; /* Adiciona um pouco de espaço nas laterais em telas menores */
+    box-sizing: border-box; /* Garante que o padding não afete a largura total */
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+    text-align: center;
+    width: 100%; /* Ocupa a largura total em telas menores */
+    max-width: 400px; /* Largura máxima em telas maiores */
+}
+
+h1 {
+    color: #2e8b57; /* Verde escuro agradável */
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px); /* Considera o padding */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button {
+    padding: 14px 24px;
+    background-color: #007bff; /* Azul primário */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.2s ease-in-out;
+    width: 100%; /* Largura total do container */
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    margin-top: 30px;
+    text-align: left;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+.result p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #444;
+    word-break: break-word; /* Evita que palavras longas quebrem o layout */
+}
+
+/* Media query para telas menores (até 600px de largura) */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        height: 80vh;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: space-around;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    input[type="text"] {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 12px 20px;
+        margin-top: -4rem;
+    }
+
+    .result {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .result p {
+        font-size: 1rem;
+
+    }
+}
