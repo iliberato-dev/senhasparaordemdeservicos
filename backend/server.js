@@ -13,14 +13,14 @@ app.use(bodyParser.json());
 
 // Middleware CORS para permitir requisições de TODAS as origens (apenas para desenvolvimento!)
 
-/* const corsOptions = {
-  origin: "https://seu-frontend.com", // Substitua pelo domínio do seu frontend
+ const corsOptions = {
+  origin: "https://senhasparaordemdeservicos.onrender.com/", // Substitua pelo domínio do seu frontend
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // Se você precisar de cookies ou autenticação
   optionsSuccessStatus: 204,
-}; */
+}; 
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 // Conectar ao banco de dados SQLite
 const db = new sqlite3.Database("./senhas.db", (err) => {
