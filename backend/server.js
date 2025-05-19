@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors"); // Já importado
 
 const app = express();
-const port = 3001;
+// const port = 3001;
 
 // Middleware para analisar o corpo das requisições POST
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -17,6 +17,9 @@ app.use(bodyParser.json());
   origin: "https://senhasparaordemdeservicos.onrender.com/", // Substitua pelo domínio do seu frontend
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // Se você precisar de cookies ou autenticação
+  allowedHeaders: 'Content-Type,Authorization',
+  exposedHeaders: 'Content-Length,Date,ETag',
+  maxAge: 86400,
   optionsSuccessStatus: 204,
 }; 
 
@@ -134,6 +137,9 @@ app.get("/buscar-senhas/:ordemServico", (req, res) => {
     }
   );
 });
+
+// Use process.env.PORT para obter a porta configurada pelo Render
+const port = process.env.PORT || 3001; // Use 3001 como padrão localmente
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
