@@ -6,7 +6,7 @@ async function gerarSenhasDeterministicas() {
 
     if (ordemServico) {
         try {
-            const response = await fetch('https://senhasparaordemdeservicosbackend.onrender.com', {
+            const response = await fetch('https://senhasparaordemdeservicosbackend.onrender.com/gerar-senhas', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
