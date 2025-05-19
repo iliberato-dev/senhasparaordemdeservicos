@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 // Middleware CORS para permitir requisições de TODAS as origens (apenas para desenvolvimento!)
 
  const corsOptions = {
-  origin: "https://senhasparaordemdeservicos.onrender.com/", // Substitua pelo domínio do seu frontend
+  origin: "https://senhasparaordemdeservicos.onrender.com", // Substitua pelo domínio do seu frontend
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // Se você precisar de cookies ou autenticação
   allowedHeaders: 'Content-Type,Authorization',
