@@ -18,6 +18,7 @@ async function gerarSenhasDeterministicas() {
                 const error = await response.json();
                 senha4DigitosElement.textContent = `Erro: ${error.error || 'Falha ao gerar as senhas.'}`;
                 senha6DigitosElement.textContent = '';
+                ordemServicoInput.blur(); // Hide the mobile keyboard by blurring the input
                 return;
             }
 
@@ -25,11 +26,13 @@ async function gerarSenhasDeterministicas() {
             senha4DigitosElement.style.color = '#000';
             senha4DigitosElement.innerHTML = `Senha Usuario: <span style="color: green;">${data.senha4}</span>`;
             senha6DigitosElement.innerHTML = `Senha Programação: <span style="color: blue;">${data.senha6}</span>`;
+            ordemServicoInput.blur(); // Hide the mobile keyboard by blurring the input
 
         } catch (error) {
             console.error("Erro ao comunicar com o servidor:", error);
             senha4DigitosElement.textContent = 'Erro ao comunicar com o servidor.';
             senha6DigitosElement.textContent = '';
+            ordemServicoInput.blur(); // Hide the mobile keyboard by blurring the input
         }
     } else {
         senha4DigitosElement.style.color = 'red';
