@@ -3,13 +3,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100svh;
     /*background-color: #f0f8ff;  Um azul bem claro */
     background: url('https://blog.stv.com.br/wp-content/uploads/2018/08/shutterstock_722628091.jpg');
     background-size: cover;
     color: #333;
     margin: 0;
-    padding: 20px; /* Adiciona um pouco de espaço nas laterais em telas menores */
+    padding: 0 20px; /* Adiciona um pouco de espaço nas laterais em telas menores */
     box-sizing: border-box; /* Garante que o padding não afete a largura total */
 }
 
