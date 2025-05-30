@@ -22,8 +22,10 @@ async function gerarSenhasDeterministicas() {
             }
 
             const data = await response.json();
-            senha4DigitosElement.textContent = `Senha Usuario: ${data.senha4}`;
-            senha6DigitosElement.textContent = `Senha Programação: ${data.senha6}`;
+            // senha4DigitosElement.style.color = 'green';
+            // senha6DigitosElement.style.color = 'blue';
+            senha4DigitosElement.innerHTML = `Senha Usuario: <span style="color: green;">${data.senha4}</span>`;
+            senha6DigitosElement.innerHTML = `Senha Programação: <span style="color: blue;">${data.senha6}</span>`;
 
         } catch (error) {
             console.error("Erro ao comunicar com o servidor:", error);
@@ -31,6 +33,7 @@ async function gerarSenhasDeterministicas() {
             senha6DigitosElement.textContent = '';
         }
     } else {
+        senha4DigitosElement.style.color = 'red';
         senha4DigitosElement.textContent = 'Por favor, insira a ordem de serviço.';
         senha6DigitosElement.textContent = '';
     }
