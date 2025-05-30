@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors"); // Já importado
 
 const app = express();
-// const port = 3001;
+const port = 3001;
 
 // Middleware para analisar o corpo das requisições POST
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -13,20 +13,17 @@ app.use(bodyParser.json());
 
 // Middleware CORS para permitir requisições de TODAS as origens (apenas para desenvolvimento!)
 
- const corsOptions = {
-  origin: "https://senhasparaordemdeservicos.onrender.com", // Substitua pelo domínio do seu frontend
+/* const corsOptions = {
+  origin: "https://seu-frontend.com", // Substitua pelo domínio do seu frontend
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // Se você precisar de cookies ou autenticação
-  allowedHeaders: 'Content-Type,Authorization',
-  exposedHeaders: 'Content-Length,Date,ETag',
-  maxAge: 86400,
   optionsSuccessStatus: 204,
-}; 
+}; */
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Conectar ao banco de dados SQLite
-const db = new sqlite3.Database("senhas.db", (err) => {
+const db = new sqlite3.Database("./senhas.db", (err) => {
   if (err) {
     console.error("Erro ao conectar ao banco de dados:", err.message);
   } else {
@@ -71,7 +68,7 @@ app.post("/gerar-senhas", (req, res) => {
   if (ordemServico) {
     const caracteres4 = "0123456789";
     const caracteres6 =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      "0123456789";
 
     const senha4 = gerarSenhaDeterministica(
       ordemServico + "_4",
@@ -137,9 +134,6 @@ app.get("/buscar-senhas/:ordemServico", (req, res) => {
     }
   );
 });
-
-// Use process.env.PORT para obter a porta configurada pelo Render
-const port = process.env.PORT || 3001; // Use 3001 como padrão localmente
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
