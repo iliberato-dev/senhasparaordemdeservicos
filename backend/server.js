@@ -7,6 +7,13 @@ const cors = require("cors"); // Já importado
 const app = express();
 const port = 3001;
 
+// Importante: Servir arquivos estáticos ANTES das rotas de API
+// O caminho '__dirname' deve ser o diretório onde seus arquivos HTML, CSS, JS estão localizados.
+// Se seu frontend estiver em uma pasta 'public' dentro do backend, use:
+// app.use(express.static('public'));
+// Se seu frontend estiver na raiz do projeto (como na estrutura acima), use:
+app.use(express.static('../frontend'));
+
 // Middleware para analisar o corpo das requisições POST
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -135,6 +142,11 @@ app.get("/buscar-senhas/:ordemServico", (req, res) => {
   );
 });
 
+// Rota para a página inicial (servir index.html)
+app.get('/', (req, res) => {
+  res.sendFile('../frontend' + '/index.html');
+});
+
 app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+  console.log(`Servidor rodando em https://senhasparaordemdeservicosbackend.onrender.com:${port}`);
 });
