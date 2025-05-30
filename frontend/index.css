@@ -4,7 +4,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f8ff; /* Um azul bem claro */
+    /*background-color: #f0f8ff;  Um azul bem claro */
+    background: url('https://blog.stv.com.br/wp-content/uploads/2018/08/shutterstock_722628091.jpg');
+    background-size: cover;
     color: #333;
     margin: 0;
     padding: 20px; /* Adiciona um pouco de espaço nas laterais em telas menores */
@@ -22,8 +24,15 @@ body {
 }
 
 h1 {
-    color: #2e8b57; /* Verde escuro agradável */
-    margin-bottom: 25px;
+    color: #E0AE20; /* Verde escuro agradável */
+    text-shadow: 2px 2px 4px #000000cb; /* Sombra suave para o título */
+}
+
+img {
+    width: 8rem; /* Largura fixa para a imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 50%; /* Torna a imagem circular */   
+    filter: drop-shadow(0 4px 3px #e0ad20); /* Sombra suave para a imagem */
 }
 
 .form-group {
@@ -35,7 +44,7 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #555;
+    color: #3C72F0;
 }
 
 input[type="text"] {
@@ -49,7 +58,7 @@ input[type="text"] {
 
 button {
     padding: 14px 24px;
-    background-color: #007bff; /* Azul primário */
+    background-color: #e0ad20; /* Azul primário */
     color: white;
     border: none;
     border-radius: 8px;
@@ -61,7 +70,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #3C72F0;
 }
 
 .result {
@@ -77,13 +86,14 @@ button:hover {
     margin-bottom: 10px;
     font-size: 16px;
     color: #444;
+    font-weight: 700;
     word-break: break-word; /* Evita que palavras longas quebrem o layout */
 }
 
 /* Media query para telas menores (até 600px de largura) */
 @media (max-width: 600px) {
     .container {
-        padding: 20px;
+        padding: 1.25rem;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
         height: 80vh;
@@ -98,13 +108,19 @@ button:hover {
         font-size: 2rem;
     }
 
+    img {
+        align-self: center;
+    }
+
     label {
         font-size: 1rem;
+
     }
 
     input[type="text"] {
         font-size: 1rem;
         padding: 10px;
+        margin-bottom: 4rem;
     }
 
     button {
