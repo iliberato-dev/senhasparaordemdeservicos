@@ -6,7 +6,7 @@ async function gerarSenhasDeterministicas() {
 
     if (ordemServico) {
         try {
-            const response = await fetch('https://senhasparaordemdeservicosbackend.onrender.com/gerar-senhas', {
+            const response = await fetch('http://localhost:3001/gerar-senhas', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -22,8 +22,8 @@ async function gerarSenhasDeterministicas() {
             }
 
             const data = await response.json();
-            senha4DigitosElement.textContent = `Senha de 4 dígitos: ${data.senha4}`;
-            senha6DigitosElement.textContent = `Senha de 6 dígitos: ${data.senha6}`;
+            senha4DigitosElement.textContent = `Senha Usuario: ${data.senha4}`;
+            senha6DigitosElement.textContent = `Senha Programação: ${data.senha6}`;
 
         } catch (error) {
             console.error("Erro ao comunicar com o servidor:", error);
