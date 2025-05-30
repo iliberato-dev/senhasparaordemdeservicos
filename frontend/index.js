@@ -22,8 +22,7 @@ async function gerarSenhasDeterministicas() {
             }
 
             const data = await response.json();
-            // senha4DigitosElement.style.color = 'green';
-            // senha6DigitosElement.style.color = 'blue';
+            senha4DigitosElement.style.color = '#000';
             senha4DigitosElement.innerHTML = `Senha Usuario: <span style="color: green;">${data.senha4}</span>`;
             senha6DigitosElement.innerHTML = `Senha Programação: <span style="color: blue;">${data.senha6}</span>`;
 
