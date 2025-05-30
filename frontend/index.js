@@ -35,6 +35,7 @@ async function gerarSenhasDeterministicas() {
         senha4DigitosElement.style.color = 'red';
         senha4DigitosElement.textContent = 'Por favor, insira a ordem de serviço.';
         senha6DigitosElement.textContent = '';
+        ordemServicoInput.blur(); // Hide the mobile keyboard by blurring the input
     }
 }
 
